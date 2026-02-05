@@ -12,5 +12,4 @@ LINE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" $SAMPLES_FILE)
 BATCH_ID=$(echo "$LINE" | awk -F'\t' '{print $1}')
 echo $BATCH_ID
 DIRECTORY=$(echo "$LINE" | awk -F'\t' '{print $2}')
-# Call your python script with these arguments
 python /peng_2/peng_lab/scripts/rhesus_atlas/Atlas/run_preprocessing.py "$BATCH_ID" "$DIRECTORY"
